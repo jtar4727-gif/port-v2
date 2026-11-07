@@ -1,0 +1,3 @@
+name: Compilar 3DS
+on: [push, workflow_dispatch]
+jobs: {build: {runs-on: ubuntu-latest, container: "devkitpro/devkitarm:latest", steps: [{uses: "actions/checkout@v4"}, {name: Bibliotecas, run: "dkp-pacman -Syu --noconfirm && dkp-pacman -S --noconfirm 3ds-dev"}, {name: Compilar, run: "MK=$(find . -name Makefile -path '*game3ds*' | head -1); echo Projeto em $MK; rm -rf /tmp/proj; mkdir /tmp/proj; cp -r \"$(dirname \"$MK\")\"/. /tmp/proj/; cd /tmp/proj && make && mkdir -p \"$GITHUB_WORKSPACE/saida\" && cp qalci.3dsx qalci.smdh \"$GITHUB_WORKSPACE/saida/\""}, {name: Enviar, uses: "actions/upload-artifact@v4", with: {name: QueroAcabarLogoComIsso-3dsx, path: saida}}]}}
