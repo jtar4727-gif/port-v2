@@ -1,0 +1,22 @@
+QUERO ACABAR LOGO COM ISSO — versão de teste para Nintendo 3DS (etapa 1)
+
+Esta etapa traz: menu, motor de diálogos, escolhas, salvamento e o prólogo.
+Tela de cima: arte/cena. Tela de baixo: diálogo, escolhas e menu (toque ou botões).
+
+COMO GERAR O ARQUIVO (sem instalar nada no PC):
+1. Crie uma conta gratuita em github.com e um repositório novo (pode ser privado).
+2. Envie TODO o conteúdo desta pasta (inclusive a pasta oculta .github) para o repositório
+   ("Add file" > "Upload files").
+3. Abra a aba "Actions". A compilação roda sozinha (uns 3-5 min). Se não rodar, clique em
+   "Compilar 3DS" > "Run workflow".
+4. Ao terminar, baixe em "Artifacts": QueroAcabarLogoComIsso-3dsx (e -cia, se gerado).
+
+COMO INSTALAR NO 3DS:
+- .3dsx: copie qalci.3dsx para o cartão SD em /3ds/ e abra pelo Homebrew Launcher.
+- .cia: instale com o FBI (cria ícone no menu HOME).
+- Para ter som, é preciso o dspfirm.cdc (Rosalina/DSP1 dump). Sem ele o jogo roda mudo.
+
+COMPILAR LOCALMENTE (opcional): instale o devkitPro (devkitARM + 3ds-dev) e rode "make".
+
+IMPORTANTE: este código nunca foi compilado nem testado em um 3DS de verdade.
+Se a compilação falhar, mande o log de erro da aba Actions que eu corrijo.
